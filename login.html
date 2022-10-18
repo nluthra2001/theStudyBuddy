@@ -12,7 +12,6 @@
 <body>
     
     <div class="background">
-        <div class="blur"></div>
     </div>
 
     <div class="hero">
@@ -26,18 +25,19 @@
             </div>
 
             <form id="login" class="input-group">
-                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="text" class="input-field" placeholder="Username" required>
                 <input type="text" class="input-field" placeholder="Password" required>
                 <input type="checkbox" class="check-box"><span>Remember Password</span>
-                <button type="submit" class="submit-btn">Login</button>
+                <button type="submit" class="submit-btn" onclick="submitBtn()">Login</button>
+                
             </form>
 
             <form id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="text" class="input-field" placeholder="Username" required>
                 <input type="email" class="input-field" placeholder="Email" required>
                 <input type="text" class="input-field" placeholder="Password" required>
-                <input type="checkbox" class="check-box" required><span>I agree to the terms and conditions</span>
-                <button type="submit" class="submit-btn">Register</button>
+                <button type="submit" class="submit-btn" onclick="submitBtn()">Register</button>
+
             </form>
 
         </div>
@@ -57,6 +57,11 @@
                 y.style.left = "450px";
                 z.style.left = "0px";
             }
+
+            function submitBtn() {
+            location.href = "dashboard.html";
+            }
+
         </script>
 
     </div>
