@@ -9,7 +9,7 @@
 body{
     font-family: 'Roboto Condensed', sans-serif;
   font-size: 1rem;
-  background: rgb(226, 121, 121);
+  background: rgb(102, 82, 138);
 }
 
 button{
@@ -45,7 +45,7 @@ header{
 
 #header button{
   font-family: inherit;
-  border: 1px solid red;
+  border: 1px solid rgb(78, 58, 95);
 }
 
 #create_card{
