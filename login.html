@@ -14,7 +14,7 @@
     <div class="background">
     </div>
 
-    <div class="hero">
+    <div class="form">
         <div class="form-box">
 
             <div class="button-box">
@@ -27,38 +27,33 @@
             <form id="login" class="input-group">
                 <input type="email" id="loginEmail" class="input-field" placeholder="Email" required>
                 <input type="text" id="loginPass" class="input-field" placeholder="Password" required>
-                <input id="loginUp" class="submit-btn"   name="login_submit" value="Login">
-                
+                <input id="loginUp" class="submit-btn" name="login_submit" value="Login">
             </form>
 
             <form id="register" class="input-group">
                 <input type="text" id="regisUser" class="input-field" placeholder="Username" required>
                 <input type="email" id="regisEmail" class="input-field" placeholder="Email" required>
                 <input type="text" id="regisPass" class="input-field" placeholder="Password" required>
-                <input id="signUp" class="submit-btn"   name="signup_submit" value="Register">
-
+                <input id="signUp" class="submit-btn" name="signup_submit" value="Register">
             </form>
 
         </div>
 
         <script>
-            var x = document.getElementById("login");
-            var y = document.getElementById("register");
-            var z = document.getElementById("btn");
+
+            var loginInfo = document.getElementById("login"); 
+            var registerInfo = document.getElementById("register");  
+            var switcher = document.getElementById("btn");    
 
             function register(){
-                x.style.left = "-400px";
-                y.style.left = "50px";
-                z.style.left = "110px";
+                loginInfo.style.left = "-400px";
+                registerInfo.style.left = "50px";
+                switcher.style.left = "110px";
             }
             function login(){
-                x.style.left = "50px";
-                y.style.left = "450px";
-                z.style.left = "0px";
-            }
-
-            function submitBtn() {
-            //location.href = "dashboard.html";
+                loginInfo.style.left = "50px";
+                registerInfo.style.left = "450px";
+                switcher.style.left = "0px";
             }
 
         </script>
