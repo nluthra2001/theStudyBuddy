@@ -25,10 +25,9 @@
             </div>
 
             <form id="login" class="input-group">
-                <input type="text" id="loginUser" class="input-field" placeholder="Username" required>
+                <input type="email" id="loginEmail" class="input-field" placeholder="Email" required>
                 <input type="text" id="loginPass" class="input-field" placeholder="Password" required>
-                <input type="checkbox" class="check-box"><span>Remember Password</span>
-                <button type="submit" class="submit-btn" onclick="submitBtn()">Login</button>
+                <input id="loginUp" class="submit-btn"   name="login_submit" value="Login">
                 
             </form>
 
@@ -36,7 +35,7 @@
                 <input type="text" id="regisUser" class="input-field" placeholder="Username" required>
                 <input type="email" id="regisEmail" class="input-field" placeholder="Email" required>
                 <input type="text" id="regisPass" class="input-field" placeholder="Password" required>
-                <input id="signUp" class="submit-btn"   name="signup_submit" value="Sign up">
+                <input id="signUp" class="submit-btn"   name="signup_submit" value="Register">
 
             </form>
 
@@ -71,9 +70,9 @@
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-    import { getDatabase } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+    import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
     //import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
-    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
@@ -106,7 +105,13 @@
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            alert('user created!');
+
+            set(ref(database, 'users/' + user.uid),{
+                username: username,
+                email: email,
+                password: password
+            })
+            alert('Successfuly Registered!');
             // ...
         })
         .catch((error) => {
@@ -116,6 +121,39 @@
             alert(errorMessage);
             // ..
         });
+    });
+
+    loginUp.addEventListener('click',(e) => {
+
+    var email = document.getElementById('loginEmail').value;
+    var password = document.getElementById('loginPass').value;
+
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+
+            const dt = new Date();
+            update(ref(database, 'users/' + user.uid), {last_login: dt,})
+
+            alert('Successfuly Logged In!');
+
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            alert(errorMessage);
+            // ..
+        });
+    });
+
+    const user = auth.currentUser;
+    onAuthStateChanged(auth, (user) => {
+        if(user){
+            const uid = user.uid;
+        }
+        else {}
     });
 </script>
 
