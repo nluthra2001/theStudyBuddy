@@ -152,6 +152,7 @@
     onAuthStateChanged(auth, (user) => {
         if(user){
             const uid = user.uid;
+            window.location = 'dashboard.html';
         }
         else {}
     });
