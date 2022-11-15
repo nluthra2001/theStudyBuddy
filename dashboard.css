@@ -8,7 +8,7 @@
 .header{
     height: 100%;
     width: 100%;
-    background: linear-gradient(to right, #6280d1, #744a97);
+    background: linear-gradient(to right, #573964, #44647e);
     position: absolute; 
 }
 
@@ -64,4 +64,89 @@ button span{
     border-radius:50%;
 }
 
+.message1 {
+    height: 100px;
+    text-align: center;
+    margin: 6% auto;
+    position: relative;
+    padding: 5px;
+    overflow: hidden;
+    color:#ffff;
+}
 
+.message1 h1{
+    font-size: 40px;
+}
+
+.message1 p{
+    margin: 10px 0 40px;
+    font-size: 20px;
+    color:#ffff;
+}
+
+
+.button-box{
+    position: relative;
+    padding: 5px; 
+    margin-top: 4%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.calendar_btn{
+    height: 100px;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+    width: 170px;
+    margin: 30px auto;
+    margin-right: 80px;
+    position: relative;
+    border-radius: 30px;
+    font-size: 20px;
+
+}
+
+.quizzes_btn{
+    height: 100px;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+    width: 170px;
+    margin: 30px auto;
+    margin-right: 80px;
+    position: relative;
+    border-radius: 30px;
+    font-size: 20px;
+
+}
+
+.flashcards_btn{
+    height: 100px;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+    width: 170px;
+    margin: 30px auto;
+    margin-left: 80px;
+    position: relative;
+    border-radius: 30px;
+    font-size: 20px;
+
+}
+
+.studylink_btn{
+    height: 100px;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+    width: 170px;
+    margin: 30px auto;
+    margin-left: 80px;
+    position: relative;
+    border-radius: 30px;
+    font-size: 20px;
+
+}
