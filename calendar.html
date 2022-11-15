@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Study Buddy</title>
+    <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+
+    <section class="hold">
+        <nav class="upper-bar">
+            <a href="dashboard.html">
+                <img src="TSBLogo.png"  class="logo" align="right">
+            </a>
+            <ul>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="quiz.html">Quizzes</a></li>
+                <li><a href="flashcard.html">Flashcards</a></li>
+                <li><a href="studylink.html">Study Links</a></li>
+                <li><a href="index.html">Index</a></li>
+                <li id="logout" ><a href="">Logout</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="action">
+    <div id="container">
+        <div id="header">
+          <div id="monthDisplay"></div>
+          <div>
+            <button id="backButton">Back</button>
+            <button id="nextButton">Next</button>
+          </div>
+        </div>
+  
+        <div id="weekdays">
+          <div>Sunday</div>
+          <div>Monday</div>
+          <div>Tuesday</div>
+          <div>Wednesday</div>
+          <div>Thursday</div>
+          <div>Friday</div>
+          <div>Saturday</div>
+        </div>
+  
+        <div id="calendar"></div>
+      </div>
+  
+      <div id="newEventModal">
+        <h2>New Event</h2>
+  
+        <input id="eventTitleInput" placeholder="Event Title" />
+  
+        <button id="saveButton">Save</button>
+        <button id="cancelButton">Cancel</button>
+      </div>
+  
+      <div id="deleteEventModal">
+        <h2>Event</h2>
+  
+        <p id="eventText"></p>
+  
+        <button id="deleteButton">Delete</button>
+        <button id="closeButton">Close</button>
+      </div>
+  
+      <div id="modalBackDrop"></div>
+  
+      <script src="calendar.js"></script>
+    </div>
+    </section>
+</body>
