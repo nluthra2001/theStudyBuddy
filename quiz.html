@@ -1,69 +1,47 @@
-<!DOCTYPE html>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="quiz.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <title>Quiz</title>
 </head>
+
 <body>
-    <div class="start_btn"><button>Start Quiz</button></div>
-    <div class="info_box">
-        <div class="info-title"><span>Some Rules of this Quiz</span></div>
-        <div class="info-list">
-            <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
-            <div class="info">2. Once you select your answer, it can't be undone.</div>
-            <div class="info">3. You can't select any option once time goes off.</div>
-            <div class="info">5. You'll get points on the basis of your correct answers.</div>
+    <section class="header">
+        <nav class="upper-bar">
+            <a href="dashboard.html">
+                <img src="TSBLogo.png"  class="logo" align="right">
+            </a>
+            <ul>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="quiz.html">Quizzes</a></li>
+                <li><a href="flashcard.html">Flashcards</a></li>
+                <li><a href="studylink.html">Study Links</a></li>
+                <li><a href="index.html">Index</a></li>
+                <li id="logout" ><a href="">Logout</a></li>
+            </ul>
+        </nav>
+
+        <h1>Quiz Creator</h1>
+        <div class="addQuestions">
+            <input id="questionInput" type="text" placeholder="Question">
+            <input id="correctInput" type="text" placeholder="Correct Answer">
+            <input id="wrongOneInput" type="text" placeholder="Wrong Answer 1">
+            <input id="wrongTwoInput" type="text" placeholder="Wrong Answer 2">
+        <button onclick="handlers.addQuestion()">Add Question</button>
         </div>
-        <div class="buttons">
-            <button class="quit">Exit</button>
-            <button class="restart">Continue</button>
+        <div class="info">
+            <li id="NumberQuestionsInQuiz">You currently have 0 questions added to your quiz</li>
+            <button onclick="view.displayQuestions()" id="startQuiz">Start Quiz</button>
         </div>
-    </div>
-    <!-- Quiz Section -->
-    <div class="quiz_box">
-        <header>
-            <div class="title">Quiz</div>
-            <div class="timer">
-                <div class="time_left_txt">Time Left</div>
-                <div class="timer_sec">15</div>
-            </div>
-            <div class="time_line"></div>
-        </header>
-        <section>
-            <div class="que_text">
-                <!-- questions from JavaScript -->
-            </div>
-            <div class="option_list">
-                <!-- options from JavaScript -->
-            </div>
-        </section>
-        <!-- footer of Quiz Box -->
-        <footer>
-            <div class="total_que">
-                <!-- Question Count from JavaScript -->
-            </div>
-            <button class="next_btn">Next Que</button>
-        </footer>
-    </div>
-    <!-- Result Box -->
-    <div class="result_box">
-        <div class="icon">
-            <i class="fas fa-crown"></i>
-        </div>
-        <div class="complete_text">You've completed the Quiz!</div>
-        <div class="score_text">
-            <!-- Score Result from JavaScript -->
-        </div>
-        <div class="buttons">
-            <button class="restart">Take Again</button>
-            <button class="quit">Quit</button>
-        </div>
-    </div>
-    <script src="questions.js"></script>
+        <p class="answersCorrect"></p>
+        <div class="questionsWrapper"></div>
+
+    </section>
+
     <script src="quiz.js"></script>
 </body>
-</html>
+
