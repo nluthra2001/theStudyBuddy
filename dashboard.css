@@ -9,7 +9,7 @@
     height: 100%;
     width: 100%;
     background: linear-gradient(to right, #573964, #44647e);
-    position: absolute; 
+    position: overflow; 
 }
 
 .upper-bar{

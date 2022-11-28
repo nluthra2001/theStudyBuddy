@@ -22,7 +22,7 @@ button{
 }
 
 button:hover{
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(241, 209, 209, 0.838);
 }
 
 .container{
@@ -30,22 +30,37 @@ button:hover{
   margin: auto;
 }
 
-header{
-    background-color: rgb(255, 255, 255);
+.upper-bar{
+  height: 80px;
+  position: relative;
+  background: rgb(39, 29, 38);
 }
 
-#header{
-  display: flex;
-  justify-content: space-between;
+
+nav{
+  display:flex;
   align-items: center;
-  min-height: 70px;
-  padding: 0 20px;
-  background: #fff;
+  padding:20px 8%;
 }
-
-#header button{
+nav h1{
+  margin-left: 400px;
+  font-size: 30px;
+  color: #6108c7e6;
+  font-weight: bold;
+  position:relative; 
+}
+nav button{
   font-family: inherit;
-  border: 1px solid rgb(78, 58, 95);
+  border: 1px solid rgb(150, 51, 237);
+  width: 150px;
+  margin-left: 15px;
+  cursor: pointer;
+  transform: translateX(250%);
+}
+nav .logo{
+  width: 200px;
+  margin-left: -50px;
+  cursor: pointer;
 }
 
 #create_card{
@@ -67,7 +82,7 @@ header{
   width: 100%;
   border-radius: 5px;
   font-family: inherit;
-  border: 1px solid lightgray;
+  border: 5px solid lightgray;
   resize: none;
 }
 
